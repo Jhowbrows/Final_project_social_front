@@ -1,37 +1,114 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
     background-color: var(--surface-color);
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
+    padding: 1rem 2rem;
 }
-.navbar-links a {
-    margin: 0 15px;
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-links-desktop {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-links-desktop a {
     font-weight: bold;
     color: var(--secondary-text-color);
     font-size: 1rem;
 }
-.navbar-links a:hover {
+
+.navbar-links-desktop a:hover {
     color: var(--primary-color);
 }
-.navbar-action-buttons {
+
+.navbar-actions-desktop {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
-.navbar-action-buttons button {
+
+.navbar-actions-desktop button {
     background-color: var(--hover-color);
     color: var(--primary-text-color);
 }
 
-@media (max-width: 480px) {
-    .navbar {
-        padding: 0.5rem 1rem;
+.logout-button {
+    background-color: #e4e6eb !important;
+    color: #050505 !important;
+}
+
+
+.hamburger-menu,
+.navbar-links-mobile {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    
+    .navbar-links-desktop,
+    .navbar-actions-desktop {
+        display: none;
     }
-    .navbar-links a {
-        margin: 0 8px;
-        font-size: 0.9rem;
+
+    
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2rem;
+        height: 2rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin-left: auto; 
+    }
+
+    .hamburger-menu div {
+        width: 2rem;
+        height: 0.25rem;
+        background: var(--primary-text-color);
+        border-radius: 10px;
+    }
+    
+    
+    .navbar-links-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .navbar-links-mobile a {
+        text-align: center;
+        padding: 1rem 0;
+        color: var(--primary-text-color);
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .navbar-actions-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .navbar-actions-mobile button {
+        width: 100%;
+        background-color: var(--hover-color);
+        color: var(--primary-text-color);
     }
 }
