@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.navbar-links a {
+  margin: 0 15px;
+  font-weight: bold;
+  color: #65676b;
+  font-size: 1rem;
+}
+
+.navbar-links a:hover {
+  color: #1877f2;
+}
+
+.navbar-logout {
+  background-color: #f0f2f5;
+  color: #1c1e21;
+}
+
+.navbar-logout:hover {
+  background-color: #e4e6eb;
+}

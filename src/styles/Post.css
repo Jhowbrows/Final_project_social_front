@@ -1,0 +1,34 @@
+.post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+}
+.post-header {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.post-content {
+    margin-bottom: 1rem;
+}
+.post-timestamp {
+    color: #65676b;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+.post-actions {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+.post-actions button {
+    background: none;
+    color: #65676b;
+    font-weight: bold;
+}
+.post-actions button.liked {
+    color: #1877f2;
+}

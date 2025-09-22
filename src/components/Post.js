@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import api from '../services/api';
-
-const postStyle = { border: '1px solid #ccc', padding: '1rem', margin: '1rem auto', borderRadius: '8px', maxWidth: '600px'};
-const commentStyle = { background: '#f9f9f9', borderTop: '1px solid #eee', padding: '8px', marginTop: '8px' };
+import '../styles/Post.css';
 
 function Post({ post, onUpdate }) {
     const [likes, setLikes] = useState(post.likes_count);
@@ -24,19 +22,19 @@ function Post({ post, onUpdate }) {
         try {
             await api.post(`posts/${post.id}/comment/`, { text: newComment });
             setNewComment('');
-            onUpdate(); // Chama a função do pai (FeedPage) para recarregar tudo
+            onUpdate(); 
         } catch (error) {
             console.error("Erro ao comentar", error);
         }
     };
 
     return (
-        <div style={postStyle}>
-            <h4>{post.author.username}</h4>
-            <p>{post.content}</p>
-            <small>{new Date(post.created_at).toLocaleString()}</small>
-            <div>
-                <button onClick={handleLike} style={{ background: isLiked ? 'lightblue' : 'white' }}>
+        <div className="post">
+            <div className="post-header">{post.author.username}</div>
+            <p className="post-content">{post.content}</p>
+            <small className="post-timestamp">{new Date(post.created_at).toLocaleString()}</small>
+            <div className="post-actions">
+                <button onClick={handleLike} className={isLiked ? 'liked' : ''}>
                     Curtir
                 </button>
                 <span style={{ marginLeft: '10px' }}>Curtidas: {likes}</span>

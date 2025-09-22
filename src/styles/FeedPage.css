@@ -1,0 +1,23 @@
+.create-post-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+}
+.create-post-form textarea {
+    width: 100%;
+    min-height: 80px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.create-post-form button {
+    margin-top: 10px;
+    background-color: #1877f2;
+    color: white;
+    float: right;
+}

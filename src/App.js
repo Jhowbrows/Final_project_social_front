@@ -5,6 +5,7 @@ import RegisterPage from './pages/RegisterPage';
 import FeedPage from './pages/FeedPage';
 import ProfilePage from './pages/ProfilePage';
 import ExplorePage from './pages/ExplorePage';
+import './styles/App.css'; 
 
 const PrivateRoute = ({ children }) => {
     const token = localStorage.getItem('token');
@@ -14,14 +15,16 @@ const PrivateRoute = ({ children }) => {
 function App() {
     return (
         <Router>
-            <Routes>
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-                <Route path="/feed" element={<PrivateRoute><FeedPage /></PrivateRoute>} />
-                <Route path="/explore"element={<PrivateRoute><ExplorePage /></PrivateRoute>}/>
-                <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
-                <Route path="*" element={<Navigate to={localStorage.getItem('token') ? "/feed" : "/login"} />} />
-            </Routes>
+            <div className="app-container"> 
+                <Routes>
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/register" element={<RegisterPage />} />
+                    <Route path="/feed" element={<PrivateRoute><FeedPage /></PrivateRoute>} />
+                    <Route path="/explore" element={<PrivateRoute><ExplorePage /></PrivateRoute>} />
+                    <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
+                    <Route path="*" element={<Navigate to={localStorage.getItem('token') ? "/feed" : "/login"} />} />
+                </Routes>
+            </div>
         </Router>
     );
 }
