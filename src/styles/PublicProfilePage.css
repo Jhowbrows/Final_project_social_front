@@ -57,3 +57,13 @@
     padding: 2rem;
     font-style: italic;
 }
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 1rem;
+    }
+    .follow-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
