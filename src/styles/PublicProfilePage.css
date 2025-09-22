@@ -1,0 +1,59 @@
+.public-profile-container {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.profile-picture-large {   
+    width: 120px;   
+    height: 120px;  
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid var(--surface-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.follow-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+    margin: 1rem 0;
+    color: var(--secondary-text-color);
+}
+
+.public-profile-container .follow-button {
+    background-color: var(--primary-action-color);
+    color: white;
+    margin-top: 1rem;
+}
+
+
+.public-profile-container .unfollow-button {
+    background-color: var(--hover-color);
+    color: var(--secondary-text-color);
+    border: 1px solid var(--border-color);
+    margin-top: 1rem;
+}
+
+.user-posts-container {
+    margin-top: 2rem;
+}
+
+.user-posts-container h2 {
+    text-align: center;
+    color: var(--secondary-text-color);
+    margin-bottom: 1rem;
+}
+
+.no-posts-message {
+    text-align: center;
+    color: var(--secondary-text-color);
+    padding: 2rem;
+    font-style: italic;
+}

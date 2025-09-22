@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import api from '../services/api';
 import Navbar from '../components/Navbar';
+import '../styles/ProfilePage.css';
 
 function ProfilePage() {
     const [profile, setProfile] = useState(null);

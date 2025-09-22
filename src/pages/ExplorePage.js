@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import '../styles/ExplorePage.css';
 
 function ExplorePage() {
     const [users, setUsers] = useState([]);
@@ -49,15 +51,15 @@ function ExplorePage() {
     return (
         <div>
             <Navbar />
-            <div style={{ maxWidth: '600px', margin: '1rem auto' }}>
+            <div className="explore-container">
                 <h1>Explorar Utilizadores</h1>
                 {users.filter(user => user.id !== currentUser.id).map(user => (
-                    <div key={user.id} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px', borderBottom: '1px solid #ccc' }}>
-                        <span>{user.username}</span>
+                    <div key={user.id} className="user-list-item">
+                        <Link to={`/users/${user.id}`} className="user-link">{user.username}</Link>
                         {isFollowing(user.id) ? (
-                            <button onClick={() => handleUnfollow(user.id)}>Deixar de Seguir</button>
+                            <button onClick={() => handleUnfollow(user.id)} className="unfollow-button">Deixar de Seguir</button>
                         ) : (
-                            <button onClick={() => handleFollow(user.id)}>Seguir</button>
+                            <button onClick={() => handleFollow(user.id)} className="follow-button">Seguir</button>
                         )}
                     </div>
                 ))}

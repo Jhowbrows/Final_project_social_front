@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../services/api';
+import { Link } from 'react-router-dom';
 import '../styles/Post.css'; 
 
 function Post({ post, onUpdate }) {
@@ -38,13 +39,16 @@ function Post({ post, onUpdate }) {
     return (
         <div className="post">
             <div className="post-header">
-                
-                <img 
-                    src={post.author.profile_picture || '/default-avatar.png'} 
-                    alt="Foto de perfil" 
-                    className="profile-picture"
-                />
-                <span className="post-author">{post.author.username}</span>
+                <Link to={`/users/${post.author.id}`}>
+                    <img 
+                        src={post.author.profile_picture || '/default-avatar.png'}
+                        alt="Foto de perfil" 
+                        className="profile-picture"
+                    />
+                </Link>
+                <Link to={`/users/${post.author.id}`} className="post-author">
+                    {post.author.username}
+                </Link>
             </div>
 
             <p className="post-content">{post.content}</p>
