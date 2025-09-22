@@ -35,7 +35,9 @@ function FeedPage() {
             <div className="create-post-form">
                 <form onSubmit={handleCreatePost}>
                     <textarea value={newPostContent} onChange={(e) => setNewPostContent(e.target.value)} placeholder="O que está acontecendo?"/>
-                    <button type="submit">Postar</button>
+                    <div className="form-actions">
+                        <button type="submit">Postar</button>
+                    </div>
                 </form>
             </div>
             <div>

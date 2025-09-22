@@ -6,29 +6,88 @@
     margin: 1rem auto;
     max-width: 600px;
 }
+
 .post-header {
-    font-weight: bold;
+    display: flex;
+    align-items: center;
     margin-bottom: 1rem;
 }
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.post-author {
+    font-weight: bold;
+}
+
 .post-content {
     margin-bottom: 1rem;
+    line-height: 1.5;
 }
+
 .post-timestamp {
     color: #65676b;
     font-size: 0.8rem;
     margin-bottom: 1rem;
 }
+
 .post-actions {
     display: flex;
     align-items: center;
     border-top: 1px solid #eee;
-    padding-top: 1rem;
+    padding-top: 0.5rem; /* Reduzido o padding */
 }
+
 .post-actions button {
     background: none;
     color: #65676b;
     font-weight: bold;
+    padding: 8px;
 }
+
 .post-actions button.liked {
     color: #1877f2;
+}
+
+/* Estilos para a secção de comentários */
+.comments-section {
+    margin-top: 1rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.comment {
+    background-color: #f0f2f5;
+    border-radius: 18px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.comment strong {
+    margin-right: 6px;
+}
+
+.comment-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.comment-form input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+    padding: 8px 12px;
+    margin-right: 8px;
+}
+
+.comment-form button {
+    background-color: #1877f2;
+    color: white;
+    padding: 8px 12px;
 }
