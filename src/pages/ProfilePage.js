@@ -15,7 +15,7 @@ function ProfilePage() {
         try {
             const response = await api.get('users/me/');
             setProfile(response.data);
-            // Pré-preenche os estados com os dados atuais do perfil
+            
             setFirstName(response.data.first_name || '');
             setLastName(response.data.last_name || '');
         } catch (error) {
@@ -29,11 +29,11 @@ function ProfilePage() {
 
     const handleProfileUpdate = async (e) => {
         e.preventDefault();
-        setMessage(''); // Limpa a mensagem anterior
+        setMessage(''); 
         try {
             await api.patch('users/me/', { first_name: firstName, last_name: lastName });
             setMessage('Nome atualizado com sucesso!');
-            fetchProfile(); // ATUALIZAÇÃO: Busca o perfil novamente para mostrar a mudança
+            fetchProfile(); 
         } catch (error) {
             setMessage('Falha ao atualizar o nome.');
         }
@@ -41,7 +41,7 @@ function ProfilePage() {
 
     const handlePasswordChange = async (e) => {
         e.preventDefault();
-        setMessage(''); // Limpa a mensagem anterior
+        setMessage(''); 
         try {
             await api.post('users/me/change-password/', { old_password: oldPassword, new_password: newPassword });
             setMessage('Senha alterada com sucesso!');
@@ -52,12 +52,12 @@ function ProfilePage() {
         }
     };
 
-    // Função para lidar com a seleção do ficheiro
+    
     const handleFileChange = (e) => {
         setProfilePicture(e.target.files[0]);
     };
 
-    // Função para enviar a nova foto de perfil
+    
     const handlePhotoUpdate = async (e) => {
         e.preventDefault();
         if (!profilePicture) {
@@ -76,7 +76,7 @@ function ProfilePage() {
                 },
             });
             setMessage('Foto de perfil atualizada com sucesso!');
-            fetchProfile(); // Recarrega o perfil para mostrar a nova foto
+            fetchProfile(); 
         } catch (error) {
             setMessage('Falha ao atualizar a foto de perfil.');
             console.error(error);
@@ -86,11 +86,11 @@ function ProfilePage() {
 
 
     const handlePhotoDelete = async () => {
-        setMessage(''); // Limpa a mensagem anterior
+        setMessage(''); 
         try {
             await api.post('users/me/delete-picture/');
             setMessage('Foto de perfil apagada com sucesso!');
-            fetchProfile(); // Recarrega o perfil para remover a imagem da tela
+            fetchProfile(); 
         } catch (error) {
             setMessage('Falha ao apagar a foto de perfil.');
             console.error(error);
@@ -106,7 +106,7 @@ function ProfilePage() {
             <div style={{ maxWidth: '600px', margin: '1rem auto', padding: '1rem' }}>
                 <h1>Perfil de {profile.username}</h1>
 
-                {/* MOSTRA A FOTO DE PERFIL ATUAL */}
+                
                 {profile.profile.profile_picture ? (
                     <div>
                         <img 
@@ -114,7 +114,7 @@ function ProfilePage() {
                             alt="Foto de perfil" 
                             style={{ width: '150px', height: '150px', borderRadius: '50%', objectFit: 'cover' }} 
                         />
-                        {/* BOTÃO PARA APAGAR A FOTO */}
+                        
                         <button onClick={handlePhotoDelete} style={{ display: 'block', marginTop: '10px' }}>
                             Remover Foto
                         </button>
@@ -124,7 +124,7 @@ function ProfilePage() {
                 )}
 
                 
-                {/* NOME COMPLETO EXIBIDO AQUI */}
+                
                 <p><strong>Nome:</strong> {profile.first_name || 'Não informado'} {profile.last_name || ''}</p>
 
                 <p><strong>Email:</strong> {profile.email || 'Não informado'}</p>

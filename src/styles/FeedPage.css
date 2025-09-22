@@ -1,6 +1,6 @@
 .create-post-form {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: var(--surface-color); /* Usa a cor de superfície do tema */
+    border: 1px solid var(--border-color); /* Usa a cor de borda do tema */
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem auto;
@@ -16,22 +16,27 @@
 .create-post-form textarea {
     width: 100%;
     min-height: 80px;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color); /* Usa a cor de borda do tema */
     border-radius: 6px;
     padding: 10px;
     box-sizing: border-box;
     font-size: 1rem;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    background-color: var(--background-color); /* Usa a cor de fundo do tema */
+    color: var(--primary-text-color); /* Usa a cor de texto principal do tema */
+    resize: vertical;
 }
-
 
 .form-actions {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
 }
 
 .create-post-form button {
-    background-color: #1877f2;
+    background-color: var(--primary-action-color); /* Mantém o azul, como pedido */
     color: white;
-    
+}
+
+.create-post-form button:hover {
+    background-color: var(--primary-action-hover-color);
 }

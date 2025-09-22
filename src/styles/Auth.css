@@ -32,13 +32,11 @@
 }
 
 .auth-form button {
-  width: 100%;
-  background-color: #1877f2;
+  background-color: var(--primary-action-color); 
   color: white;
 }
-
 .auth-form button:hover {
-  background-color: #166fe5;
+  background-color: var(--primary-action-hover-color);
 }
 
 .auth-form p {

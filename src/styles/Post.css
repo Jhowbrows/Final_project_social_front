@@ -1,10 +1,11 @@
 .post {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem auto;
     max-width: 600px;
+    color: var(--primary-text-color); /* Garante que o texto do post muda com o tema */
 }
 
 .post-header {
@@ -23,6 +24,8 @@
 
 .post-author {
     font-weight: bold;
+    color: var(--primary-text-color); /* Garante que o nome do autor muda com o tema */
+    text-decoration: none;
 }
 
 .post-content {
@@ -31,7 +34,7 @@
 }
 
 .post-timestamp {
-    color: #65676b;
+    color: var(--secondary-text-color);
     font-size: 0.8rem;
     margin-bottom: 1rem;
 }
@@ -39,30 +42,33 @@
 .post-actions {
     display: flex;
     align-items: center;
-    border-top: 1px solid #eee;
-    padding-top: 0.5rem; /* Reduzido o padding */
+    border-top: 1px solid var(--hover-color);
+    padding-top: 0.5rem;
 }
 
 .post-actions button {
     background: none;
-    color: #65676b;
+    color: var(--secondary-text-color);
     font-weight: bold;
     padding: 8px;
 }
 
 .post-actions button.liked {
-    color: #1877f2;
+    color: var(--primary-action-color);
 }
 
 /* Estilos para a secção de comentários */
 .comments-section {
     margin-top: 1rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--hover-color);
     padding-top: 1rem;
 }
 
 .comment {
-    background-color: #f0f2f5;
+    /* USA AS NOVAS VARIÁVEIS */
+    background-color: var(--comment-background-color);
+    color: var(--comment-text-color);
+    
     border-radius: 18px;
     padding: 8px 12px;
     margin-bottom: 8px;
@@ -80,14 +86,15 @@
 
 .comment-form input {
     flex-grow: 1;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 18px;
     padding: 8px 12px;
     margin-right: 8px;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
 }
 
 .comment-form button {
-    background-color: #1877f2;
+    background-color: var(--primary-action-color);
     color: white;
-    padding: 8px 12px;
 }

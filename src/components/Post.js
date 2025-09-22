@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import api from '../services/api';
-import '../styles/Post.css'; // Importe o CSS
+import '../styles/Post.css'; 
 
 function Post({ post, onUpdate }) {
     const [likes, setLikes] = useState(post.likes_count);
@@ -22,14 +22,14 @@ function Post({ post, onUpdate }) {
         }
     };
 
-    // Função para lidar com o envio de comentários
+    
     const handleComment = async (e) => {
         e.preventDefault();
         if (!newComment.trim()) return;
         try {
             await api.post(`posts/${post.id}/comment/`, { text: newComment });
             setNewComment('');
-            onUpdate(); // Chama a função do pai (FeedPage) para recarregar tudo
+            onUpdate(); 
         } catch (error) {
             console.error("Erro ao comentar", error);
         }
@@ -38,9 +38,9 @@ function Post({ post, onUpdate }) {
     return (
         <div className="post">
             <div className="post-header">
-                {/* FOTO DE PERFIL ADICIONADA AQUI */}
+                
                 <img 
-                    src={post.author.profile_picture || '/default-avatar.png'} // Usa uma imagem padrão se não houver
+                    src={post.author.profile_picture || '/default-avatar.png'} 
                     alt="Foto de perfil" 
                     className="profile-picture"
                 />
@@ -64,7 +64,7 @@ function Post({ post, onUpdate }) {
                         <span>{comment.text}</span>
                     </div>
                 ))}
-                {/* FORMULÁRIO DE COMENTÁRIO CORRIGIDO */}
+                
                 <form onSubmit={handleComment} className="comment-form">
                     <input
                         type="text"

@@ -5,13 +5,54 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f2f5; /* Um cinzento claro para o fundo */
-  color: #1c1e21; /* Cor de texto principal */
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+/* :root define as variáveis que não mudam com o tema */
+:root {
+  --primary-action-color: #1877f2;
+  --primary-action-hover-color: #166fe5;
+}
+
+/* Tema Claro (Padrão) */
+:root, [data-theme='light'] {
+  --background-color: #f0f2f5;
+  --surface-color: #ffffff;
+  --primary-text-color: #050505;
+  --secondary-text-color: #65676b;
+  --border-color: #ddd;
+  --hover-color: #e4e6eb;
+  --link-color: #1877f2;
+
+  /* Cores específicas dos comentários no tema claro */
+  --comment-background-color: #f0f2f5;
+  --comment-text-color: #050505; /* Letras pretas */
+}
+
+/* Tema Escuro */
+[data-theme='dark'] {
+  --background-color: #18191a;
+  --surface-color: #242526;
+  --primary-text-color: #e4e6eb; /* Letras claras */
+  --secondary-text-color: #b0b3b8;
+  --border-color: #3a3b3c;
+  --hover-color: #3a3b3c;
+  --link-color: #2d88ff;
+
+  /* Cores específicas dos comentários no tema escuro */
+  --comment-background-color: #3a3b3c; /* Fundo cinzento escuro para destaque */
+  --comment-text-color: #e4e6eb;      /* Letras claras para legibilidade */
+}
+
+/* Estilos base que usam as variáveis */
+body {
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
 }
 
 a {
   text-decoration: none;
-  color: #1877f2; /* Azul moderno para links */
+  color: var(--link-color);
 }
 
 button {
