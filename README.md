@@ -2,6 +2,8 @@
 
 Este é o repositório do front-end para o projeto de Rede Social, desenvolvido com React. Esta aplicação consome a API RESTful do nosso back-end para fornecer uma experiência de usuario completa, moderna e reativa.
 
+**Aplicação Online:** **[Acesse aqui](https://socialhub-henna.vercel.app/)
+
 ---
 
 ## Funcionalidades Implementadas
