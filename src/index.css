@@ -5,9 +5,58 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s linear, color 0.2s linear;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+:root {
+  --primary-action-color: #1877f2;
+  --primary-action-hover-color: #166fe5;
+}
+
+
+:root, [data-theme='light'] {
+  --background-color: #f0f2f5;
+  --surface-color: #ffffff;
+  --primary-text-color: #050505;
+  --secondary-text-color: #65676b;
+  --border-color: #ddd;
+  --hover-color: #e4e6eb;
+  --link-color: #1877f2;
+
+  
+  --comment-background-color: #f0f2f5;
+  --comment-text-color: #050505; 
+}
+
+
+[data-theme='dark'] {
+  --background-color: #18191a;
+  --surface-color: #242526;
+  --primary-text-color: #e4e6eb; 
+  --secondary-text-color: #b0b3b8;
+  --border-color: #3a3b3c;
+  --hover-color: #3a3b3c;
+  --link-color: #2d88ff;
+  --comment-background-color: #3a3b3c; 
+  --comment-text-color: #e4e6eb;      
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: bold;
 }
