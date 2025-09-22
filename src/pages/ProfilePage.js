@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import Navbar from '../components/Navbar';
 import '../styles/ProfilePage.css'; 
@@ -12,6 +12,10 @@ function ProfilePage() {
     const [newPassword, setNewPassword] = useState('');
     const [profilePicture, setProfilePicture] = useState(null);
     const [message, setMessage] = useState('');
+    const [newUsername, setNewUsername] = useState('');
+    const [currentPassword, setCurrentPassword] = useState('');
+
+    const navigate = useNavigate();
 
     const fetchProfile = useCallback(async () => {
         try {
@@ -50,6 +54,21 @@ function ProfilePage() {
             setNewPassword('');
         } catch (error) {
             setMessage('Falha ao alterar a senha. Verifique a senha antiga.');
+        }
+    };
+
+    const handleUsernameChange = async (e) => {
+        e.preventDefault();
+        setMessage('');
+        try {
+            await api.post('users/me/change-username/', { password: currentPassword, new_username: newUsername });
+            setMessage('Nome de utilizador alterado com sucesso! Por favor, faça login novamente.');
+            
+            localStorage.removeItem('token');
+            setTimeout(() => navigate('/login'), 2000); 
+
+        } catch (error) {
+            setMessage('Falha ao alterar o nome de utilizador. Verifique a sua senha.');
         }
     };
 
@@ -120,7 +139,7 @@ function ProfilePage() {
                     <form onSubmit={handlePhotoUpdate}>
                         <h3>Alterar Foto de Perfil</h3>
                         <input type="file" onChange={handleFileChange} accept="image/*" />
-                        <button type="submit">Guardar Foto</button>
+                        <button type="submit">Salvar Foto</button>
                     </form>
                 </div>
                 
@@ -129,7 +148,19 @@ function ProfilePage() {
                         <h3>Alterar Nome</h3>
                         <input type="text" placeholder="Primeiro Nome" value={firstName} onChange={e => setFirstName(e.target.value)} />
                         <input type="text" placeholder="Último Nome" value={lastName} onChange={e => setLastName(e.target.value)} />
-                        <button type="submit">Guardar Nome</button>
+                        <button type="submit">Salvar Nome</button>
+                    </form>
+                </div>
+
+                <div className="profile-form">
+                    <form onSubmit={handleUsernameChange}>
+                        <h3>Alterar Nome de Utilizador</h3>
+                        <p style={{fontSize: '0.8rem', color: 'var(--secondary-text-color)', marginBottom: '1rem'}}>
+                            Atenção: Ao alterar o seu nome de utilizador, você será desconectado por segurança.
+                        </p>
+                        <input type="password" placeholder="Senha Atual para Confirmação" value={currentPassword} onChange={e => setCurrentPassword(e.target.value)} required />
+                        <input type="text" placeholder="Novo Nome de Utilizador" value={newUsername} onChange={e => setNewUsername(e.target.value)} required />
+                        <button type="submit">Alterar Nome de Utilizador</button>
                     </form>
                 </div>
 
@@ -144,11 +175,11 @@ function ProfilePage() {
 
                 <div className="follow-stats">
                     <span><strong>Seguidores:</strong> {profile.followers.length}</span>
-                    <span><strong>A seguir:</strong> {profile.following.length}</span>
+                    <span><strong>Seguindo:</strong> {profile.following.length}</span>
                 </div>
 
                 <div className="follow-lists">
-                    <h3>A seguir</h3>
+                    <h3>Seguindo</h3>
                     <ul>{profile.following.map(user => <li key={user.id}><Link to={`/users/${user.id}`}>{user.username}</Link></li>)}</ul>
                     <h3>Seguidores</h3>
                     <ul>{profile.followers.map(user => <li key={user.id}><Link to={`/users/${user.id}`}>{user.username}</Link></li>)}</ul>

@@ -1,71 +1,79 @@
-# Getting Started with Create React App
+# Rede Social - Interface do Utilizador (Front-end)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é o repositório do front-end para o projeto de Rede Social, desenvolvido com React. Esta aplicação consome a API RESTful do nosso back-end para fornecer uma experiência de usuario completa, moderna e reativa.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Funcionalidades Implementadas
 
-### `npm start`
+* **Autenticação Completa:** Sistema de registo e login com gestão de sessão por token.
+* **Feed de Notícias Dinâmico:** Exibe as publicações dos usuarios que você segue.
+* **Criação de Posts:** Interface para criar novas publicações diretamente no feed.
+* **Interações Sociais:**
+    * **Curtir/Descurtir** publicações.
+    * **Comentar** em publicações e ver os comentários de outros.
+    * **Seguir/Deixar de Seguir** outros utilizadores.
+* **Gestão de Perfil:**
+    * Página de perfil pessoal para ver e atualizar os seus dados.
+    * Alteração de nome e email.
+    * Alteração segura de nome de utilizador e senha (com confirmação).
+    * Upload, visualização e remoção de foto de perfil.
+* **Perfis Públicos:** Capacidade de clicar em qualquer utilizador para ver o seu perfil público, as suas publicações e as suas listas de seguidores/seguindo.
+* **Design Moderno e Responsivo:**
+    * Layout estilizado e consistente em toda a aplicação.
+    * **Modo Noturno (Dark Mode)** com um botão de troca de tema.
+    * Interface totalmente responsiva, adaptada para telemóveis e tablets, incluindo um menu "hambúrguer".
 
-Runs the app in the development mode.\
-Open [http://localhost:3000] to view it in your browser.
+---
 
+## Tecnologias Utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **React:** Biblioteca principal para a construção da interface.
+* **React Router:** Para a gestão de rotas e navegação entre as páginas.
+* **Axios:** Para fazer os pedidos HTTP para a API do back-end.
+* **React Context API:** Para a gestão do estado global do tema (Modo Noturno).
+* **CSS:** Estilização modularizada com ficheiros CSS dedicados para cada componente e página.
 
-### `npm test`
+### API Back-end
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esta aplicação consome a API Django disponível no seguinte repositório:
+* **Repositório do Back-end:** **[Clique aqui](https://github.com/Jhowbrows/final_project_social_back)**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Como Executar Localmente
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Siga os passos abaixo para configurar e executar o projeto no seu ambiente de desenvolvimento.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Pré-requisitos:**
+* Node.js e npm.
+* Git.
+* **O servidor back-end deve estar a ser executado** (localmente ou em produção).
 
-### `npm run eject`
+**Passos:**
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/Jhowbrows/final_project_social_front.git]
+    cd final_project_social_front
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.  **Configure a API:**
+    * Abra o ficheiro `src/services/api.js`.
+    * Certifique-se de que a `baseURL` está a apontar para o servidor back-end correto (para testes locais, `http://127.0.0.1:8000/api/`).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4.  **Inicie a aplicação:**
+    ```bash
+    npm start
+    ```
+    A aplicação será aberta em `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Deploy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este projeto está pronto para o deploy em qualquer plataforma moderna de hospedagem
