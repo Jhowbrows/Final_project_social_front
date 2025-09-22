@@ -1,0 +1,99 @@
+.post {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    color: var(--primary-text-color); 
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.post-author {
+    font-weight: bold;
+    color: var(--primary-text-color); 
+    text-decoration: none;
+}
+
+.post-content {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.post-timestamp {
+    color: var(--secondary-text-color);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--hover-color);
+    padding-top: 0.5rem;
+}
+
+.post-actions button {
+    background: none;
+    color: var(--secondary-text-color);
+    font-weight: bold;
+    padding: 8px;
+}
+
+.post-actions button.liked {
+    color: var(--primary-action-color);
+}
+
+
+.comments-section {
+    margin-top: 1rem;
+    border-top: 1px solid var(--hover-color);
+    padding-top: 1rem;
+}
+
+.comment {
+    background-color: var(--comment-background-color);
+    color: var(--comment-text-color);
+    
+    border-radius: 18px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.comment strong {
+    margin-right: 6px;
+}
+
+.comment-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.comment-form input {
+    flex-grow: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 8px 12px;
+    margin-right: 8px;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+}
+
+.comment-form button {
+    background-color: var(--primary-action-color);
+    color: white;
+}
