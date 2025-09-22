@@ -10,6 +10,7 @@ function Navbar() {
     return (
         <nav style={{ display: 'flex', justifyContent: 'space-around', padding: '1rem', background: '#eee', borderBottom: '1px solid #ccc' }}>
             <Link to="/feed">Feed</Link>
+            <Link to="/explore">Explorar</Link>
             <Link to="/profile">Meu Perfil</Link>
             <button onClick={handleLogout}>Sair</button>
         </nav>
