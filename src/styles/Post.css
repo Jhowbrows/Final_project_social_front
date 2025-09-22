@@ -5,7 +5,7 @@
     padding: 1.5rem;
     margin: 1rem auto;
     max-width: 600px;
-    color: var(--primary-text-color); /* Garante que o texto do post muda com o tema */
+    color: var(--primary-text-color); 
 }
 
 .post-header {
@@ -24,7 +24,7 @@
 
 .post-author {
     font-weight: bold;
-    color: var(--primary-text-color); /* Garante que o nome do autor muda com o tema */
+    color: var(--primary-text-color); 
     text-decoration: none;
 }
 
@@ -57,7 +57,7 @@
     color: var(--primary-action-color);
 }
 
-/* Estilos para a secção de comentários */
+
 .comments-section {
     margin-top: 1rem;
     border-top: 1px solid var(--hover-color);
@@ -65,7 +65,6 @@
 }
 
 .comment {
-    /* USA AS NOVAS VARIÁVEIS */
     background-color: var(--comment-background-color);
     color: var(--comment-text-color);
     

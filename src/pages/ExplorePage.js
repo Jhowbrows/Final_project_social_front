@@ -26,7 +26,7 @@ function ExplorePage() {
     const handleFollow = async (userId) => {
         try {
             await api.post(`users/${userId}/follow/`);
-            fetchUsers(); // Atualiza a lista para refletir a mudança
+            fetchUsers(); 
         } catch (error) {
             console.error("Erro ao seguir utilizador", error);
         }
@@ -35,7 +35,7 @@ function ExplorePage() {
     const handleUnfollow = async (userId) => {
         try {
             await api.post(`users/${userId}/unfollow/`);
-            fetchUsers(); // Atualiza a lista
+            fetchUsers(); 
         } catch (error) {
             console.error("Erro ao deixar de seguir utilizador", error);
         }
@@ -43,7 +43,7 @@ function ExplorePage() {
 
     if (!currentUser) return <div>A carregar...</div>;
 
-    // Verifica se o utilizador logado está a seguir um determinado utilizador
+    
     const isFollowing = (userId) => {
         return currentUser.following.some(followedUser => followedUser.id === userId);
     };
