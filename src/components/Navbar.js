@@ -20,20 +20,24 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <div className="navbar-content">
+            <div className="navbar-content">       
                 <div className="navbar-links-desktop">
                     <Link to="/feed">Feed</Link>
                     <Link to="/explore">Explorar</Link>
                     <Link to="/profile">Meu Perfil</Link>
                 </div>
 
+                <Link to="/feed" className="navbar-logo">SocialHub</Link>
+
+                
                 <div className="navbar-actions-desktop">
-                    <button onClick={toggleTheme}>
+                    <button onClick={toggleTheme} title="Mudar tema">
                         {theme === 'light' ? '🌙' : '☀️'}
                     </button>
                     <button onClick={handleLogout} className="logout-button">Sair</button>
                 </div>
 
+                
                 <button className="hamburger-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <div />
                     <div />
@@ -41,6 +45,7 @@ function Navbar() {
                 </button>
             </div>
 
+            
             {isMenuOpen && (
                 <div className="navbar-links-mobile">
                     <Link to="/feed" onClick={closeMenu}>Feed</Link>

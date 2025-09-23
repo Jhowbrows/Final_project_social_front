@@ -22,6 +22,7 @@ function RegisterPage() {
 
     return (
         <div className="auth-container">
+            <h1 className="auth-logo">SocialHub</h1>
             <button onClick={toggleTheme} className="theme-toggle-button-auth">
                 {theme === 'light' ? '🌙' : '☀️'}
             </button>
